@@ -24,8 +24,10 @@ module.exports = async function main() {
   const octokit = github.getOctokit(githubToken);
   const dependabotData = await parseCommit({ octokit });
   const config = await readConfigFile({ configFile });
+  const proceed = shouldApprove({ dependabotData, config });
 
-  if (shouldApprove({ dependabotData, config })) {
+  core.info(`Proceed: ${proceed}`);
+  if (proceed) {
     approvePR({ octokit, repo, pr });
   }
 };

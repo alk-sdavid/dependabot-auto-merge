@@ -1,5 +1,8 @@
 const { parseCommit } = require('./parse');
 
+jest.mock('@actions/core', () => ({
+  info: jest.fn(),
+}));
 jest.mock('@actions/github', () => ({
   context: {
     repo: { owner: 'alkemics', repo: 'lib-front-mfe' },
