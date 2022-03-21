@@ -4,6 +4,7 @@
   "description": "Github action to auto-merge Dependabot pull-requests",
   "main": "index.js",
   "scripts": {
+    "build": "ncc build index.js -o dist",
     "format": "prettier --write .",
     "test:format": "prettier -c .",
     "test:jest": "jest",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@alkem/eslint-config-alkemics": "~14.3.53",
+    "@vercel/ncc": "~0.33.3",
     "jest": "~27.5.1",
     "prettier": "~2.6.0"
   }
