@@ -33,8 +33,8 @@ updated-dependencies:
 Signed-off-by: dependabot[bot] <support@github.com>
   `;
   const octokit = {
-    pulls: { createReview: jest.fn() },
     rest: {
+      pulls: { createReview: jest.fn() },
       git: {
         getCommit: jest.fn(() => ({
           data: { message },
@@ -58,8 +58,8 @@ test('main script should approve pull-request', async () => {
   process.env.GITHUB_WORKSPACE = __dirname;
   await main();
   const octokit = github.getOctokit();
-  expect(octokit.pulls.createReview).toHaveBeenCalledTimes(1);
-  expect(octokit.pulls.createReview).toHaveBeenCalledWith({
+  expect(octokit.rest.pulls.createReview).toHaveBeenCalledTimes(1);
+  expect(octokit.rest.pulls.createReview).toHaveBeenCalledWith({
     body: '@dependabot merge',
     event: 'APPROVE',
     organization_name: 'alkemics',

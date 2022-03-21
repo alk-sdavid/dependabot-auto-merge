@@ -198,12 +198,12 @@ describe('shouldApprove', () => {
 
 describe('approvePR', () => {
   it('should approve pull-request', async () => {
-    const octokit = { pulls: { createReview: jest.fn() } };
+    const octokit = { rest: { pulls: { createReview: jest.fn() } } };
     const repo = { organization_name: 'alkemics', repo_name: 'lib-python-ci' };
     const pr = { number: 42 };
     await approvePR({ octokit, repo, pr });
-    expect(octokit.pulls.createReview).toHaveBeenCalledTimes(1);
-    expect(octokit.pulls.createReview).toHaveBeenCalledWith({
+    expect(octokit.rest.pulls.createReview).toHaveBeenCalledTimes(1);
+    expect(octokit.rest.pulls.createReview).toHaveBeenCalledWith({
       body: '@dependabot merge',
       event: 'APPROVE',
       organization_name: 'alkemics',

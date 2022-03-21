@@ -51,7 +51,7 @@ module.exports.shouldApprove = ({
 };
 
 module.exports.approvePR = async ({ octokit, repo, pr }) => {
-  await octokit.pulls.createReview({
+  await octokit.rest.pulls.createReview({
     ...repo,
     pull_number: pr.number,
     event: 'APPROVE',
