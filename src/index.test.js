@@ -47,9 +47,8 @@ Signed-off-by: dependabot[bot] <support@github.com>
       repo: { organization_name: 'alkemics', repo_name: 'lib-python-ci' },
       payload: {
         sender: { login: 'dependabot[bot]' },
-        pull_request: { number: 42 },
+        pull_request: { number: 42, head: { sha: 42 } },
       },
-      pull_request: { head: { sha: 42 } },
     },
     getOctokit: () => octokit,
   };

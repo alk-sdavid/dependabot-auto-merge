@@ -7,7 +7,7 @@ module.exports.parseCommit = async ({ octokit }) => {
   } = await octokit.rest.git.getCommit({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
-    commit_sha: github.context.pull_request.head.sha,
+    commit_sha: github.context.payload.pull_request.head.sha,
   });
   const yamlBody = message.match(/---(?<yml>(\r?\n|.)+)\.\.\./m)?.groups?.yml;
   const updateInfo = yaml.load(yamlBody);

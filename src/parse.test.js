@@ -3,7 +3,7 @@ const { parseCommit } = require('./parse');
 jest.mock('@actions/github', () => ({
   context: {
     repo: { owner: 'alkemics', repo: 'lib-front-mfe' },
-    pull_request: { head: { sha: '42' } },
+    payload: { pull_request: { head: { sha: '42' } } },
   },
 }));
 
