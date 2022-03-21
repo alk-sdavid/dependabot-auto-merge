@@ -1,0 +1,9 @@
+extends: '@alkem/eslint-config-alkemics'
+
+env:
+  browser: false
+  node: true
+
+rules:
+  no-console: off
+  '@typescript-eslint/no-var-requires': off

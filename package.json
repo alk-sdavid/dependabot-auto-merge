@@ -1,0 +1,38 @@
+{
+  "name": "dependabot-auto-merge",
+  "version": "1.0.0",
+  "description": "Github action to auto-merge Dependabot pull-requests",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "test:format": "prettier -c .",
+    "test:jest": "jest",
+    "test:lint": "eslint .",
+    "test": "npm run test:format && npm run test:lint && npm run test:jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alk-sdavid/dependabot-auto-merge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alk-sdavid/dependabot-auto-merge/issues"
+  },
+  "homepage": "https://github.com/alk-sdavid/dependabot-auto-merge#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@actions/core": "~1.6.0",
+    "@actions/github": "~5.0.0",
+    "js-yaml": "~4.1.0"
+  },
+  "devDependencies": {
+    "@alkem/eslint-config-alkemics": "~14.3.53",
+    "jest": "~27.5.1",
+    "prettier": "~2.6.0"
+  }
+}

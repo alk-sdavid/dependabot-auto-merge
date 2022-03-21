@@ -1,0 +1,7 @@
+- dependency-type: production
+  update-type: patch
+  exclude: lib-python-
+
+- dependency-type: development
+  update-type: patch
+  include: lib-python-
