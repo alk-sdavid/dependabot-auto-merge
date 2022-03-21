@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const main = require('./src');
 
 function errorHandler({ message, stack }) {
   core.error(`${message}\n${stack}`);
@@ -8,4 +9,4 @@ function errorHandler({ message, stack }) {
 process.on('unhandledRejection', errorHandler);
 process.on('uncaughtException', errorHandler);
 
-require('./src').catch(errorHandler);
+main().catch(errorHandler);
